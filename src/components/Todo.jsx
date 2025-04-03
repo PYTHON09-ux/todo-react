@@ -44,24 +44,24 @@ const Todo = () => {
   }, [toDoList]);
 
   return (
-    <div className="bg-teal-100 place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl shadow-lg">
+    <div className="bg-gradient-to-br from-indigo-100 to-purple-100 place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl shadow-lg border border-purple-200">
       {/* Title */}
-      <div className="flex items-center mt-7 gap-2">
-        <FontAwesomeIcon icon={faList} className="text-blue-500 text-2xl" />
-        <h1 className="text-3xl font-semibold flex-1">To-Do List</h1>
+      <div className="flex items-center mt-5 gap-2">
+        <FontAwesomeIcon icon={faList} className="text-indigo-500 text-xl" />
+        <h1 className="text-2xl font-semibold flex-1 text-indigo-800">To-Do List</h1>
       </div>
 
-      {/* Input Box */}
-      <div className="flex items-center my-7 bg-gray-200 rounded-full p-2 shadow-md">
+      {/* Input Box - Reduced height and adjusted padding */}
+      <div className="flex items-center my-5 bg-white/80 backdrop-blur-sm rounded-full p-1.5 shadow-md border border-indigo-100">
         <input
           ref={inputRef}
-          className="bg-transparent border-0 outline-none flex-1 h-14 pl-6 pr-2 placeholder:text-slate-600"
+          className="bg-transparent border-0 outline-none flex-1 h-10 pl-4 pr-2 placeholder:text-indigo-300 text-indigo-700 text-sm"
           type="text"
           placeholder="Add your task"
         />
         <button
           onClick={add}
-          className="border-none rounded-full bg-orange-600 w-32 h-14 text-white text-lg font-medium cursor-pointer hover:bg-orange-500 transition-all"
+          className="border-none rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 w-20 h-10 text-white text-sm font-medium cursor-pointer hover:opacity-90 transition-all shadow-md"
         >
           ADD +
         </button>
@@ -69,7 +69,7 @@ const Todo = () => {
       </div>
 
       {/* To-Do Items */}
-      <div className="max-h-64 overflow-y-auto w-full pr-1 custom-scrollbar">
+      <div className="max-h-64 overflow-y-auto w-full pr-1 custom-scrollbar mt-2">
         {toDoList.map((item) => (
           <TodoItems
             key={item.id}
