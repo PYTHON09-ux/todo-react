@@ -5,16 +5,16 @@ import delete_icon from "../assets/delete.png";
 
 const TodoItems = ({ text, id, isComplete, deleteToDo, toggle }) => {
   return (
-    <div className={`flex items-center my-3 gap-2 p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg ${
+    <div className={`flex items-center my-2 gap-2 p-2.5 sm:p-3 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md ${
       isComplete ? "bg-green-50 border-l-4 border-green-400" : "bg-white/90 border-l-4 border-indigo-400"
     }`}>
       <div
         onClick={() => toggle(id)}
         className="flex flex-row flex-1 items-center cursor-pointer"
       >
-        <img src={isComplete ? tick : not_tick} alt="" className="w-7" />
+        <img src={isComplete ? tick : not_tick} alt="" className="w-5 sm:w-6" />
         <p
-          className={`ml-4 text-[17px] break-words ${
+          className={`ml-2 sm:ml-3 text-sm sm:text-[15px] break-words ${
             isComplete 
               ? "line-through decoration-green-500 text-green-700" 
               : "text-indigo-700"
@@ -25,12 +25,12 @@ const TodoItems = ({ text, id, isComplete, deleteToDo, toggle }) => {
       </div>
       <div 
         onClick={() => deleteToDo(id)}
-        className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-100 transition-all cursor-pointer group"
+        className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-red-100 transition-all cursor-pointer group"
       >
         <img
           src={delete_icon}
           alt="Delete"
-          className="w-4 transition-transform transform group-hover:scale-110 group-hover:rotate-12"
+          className="w-3 sm:w-3.5 transition-transform transform group-hover:scale-110 group-hover:rotate-12"
         />
       </div>
     </div>
